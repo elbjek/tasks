@@ -1,0 +1,111 @@
+//- Template
+    This task is used to demonstrate how you like to work, therefor the guidelines are quite loose.
+    Use pug and SCSS, beside that feel free to include whatever is needed.
+
+    The following site should be created:
+
+        We do need a responsive website layout that includes the following elements on the given positions:
+            * A navigation with 3 items and their sub-items on top left
+                * Cars(BMW, Mercedes)
+                * Food(Vegetables, Meat)
+                * Animals(Dogs, Cats)
+            * A language selector that highlights the current language with at least 2 options to choose from on top right
+            * A footer at the bottom of the page
+            * A chat icon that floats on bottom left
+                * onClick a modal window opens that shows a form asking for:
+                    * Name
+                    * Email
+                    * Message
+                * All fields are required
+
+doctype html
+html
+    head
+        meta(name="viewport", content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86")
+        link(href="./task4.css" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet")
+        link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet")
+        script(src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous")
+        script(src="./assets/script.js")
+    body
+        nav.navigation-bar
+            div.navigation-left
+                div.nav-item.logo
+                    a(href="#") Logo
+                ul.navigation-items.nav-items-left
+                    li.nav-item
+                        a(href="#" onClick="") Cars
+                        ul.dropdown-menu
+                            li 
+                                a(href="#") BMW
+                            li 
+                                a(href="#") Mercedes
+                    li.nav-item 
+                        a(href="#" onClick="") Food
+                        ul.dropdown-menu
+                            li 
+                                a(href="#") Vegetables
+                            li 
+                                a(href="#") Meat
+                    li.nav-item 
+                        a(href="#" onClick="") Animals
+                        ul.dropdown-menu
+                            li 
+                                a(href="#") Cats
+                            li 
+                                a(href="#") Dogs
+            div.navigation-right
+                ul.navigation-items
+                    li.nav-item
+                        a(href="#" onClick="") Language
+                        ul.dropdown-menu   
+                            each language in ['English','French','Italian']
+                                li: a= language
+                div.hamburger
+                    i.fa.fa-bars(aria-hidden='true') 
+
+        div.hero
+            div.hero-content
+                h1 This is a hero
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                input(type="text" placeholder="Type text here")
+        div.info-wrap
+            div.info
+                i.fa.fa-paw(aria-hidden='true') 
+                h3 Lorem Ipsum
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            div.info
+                i.fa.fa-paw(aria-hidden='true') 
+                h3 Lorem Ipsum
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            div.info
+                i.fa.fa-paw(aria-hidden='true') 
+                h3 Lorem Ipsum
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.        
+        div.chat-wrap
+            button.message-button(onClick="showModalForm()")
+                i.fa.fa-comment(aria-hidden='true') 
+            div.modal-form-wrap
+                div.modal-form
+                    h3 Contact Us
+                    p Lorem ipsum dolor sit et amet.
+                    form(action="" onSubmit="submitForm()") 
+                        div.form-item.name
+                            input(type="text" placeholder="Name")
+                            div.border-bottom
+                        div.form-item.email
+                            input(type="email" placeholder="Email")
+                            div.border-bottom
+                        div.form-item
+                            textarea(name="", cols="30", rows="10", placeholder="Your message.")
+                            div.error
+                                p All Fields are required!
+                        button(type="submit") Send
+
+    div.hide-modal(onClick="hideModalForm()")    
+    footer.footer
+        ul  
+            li  
+                a(href="#") Terms of Service
+            li  
+                a(href="#") Something else

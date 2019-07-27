@@ -1,0 +1,34 @@
+//- Template
+    Please render the following layout into html
+
+    Headline 1
+
+    This is just a text paragraph
+
+    * I am a list item
+    * I am a list item
+    * I am a list item
+        * I am a sub-list item
+        * I am a sub-list item
+    * I am a list item
+
+//- Styles
+    The headline should be shown in 16px, blue
+    Standard text on the page should be 12px, black
+    Level 1 List items should be 11px, black, item shall have a 11px margin bottom
+    Sub-List items should be 8px, black, item shall have a 8px margin bottom
+doctype html
+html(lang='en')
+  head
+    link( rel="stylesheet" href="./task1.css" type="text/css")
+    body(class="task1")
+        h1 This is a headline
+        p This is a text paragraph
+        ul 
+            li I am a list item
+            li I am a list item
+            li I am a list item
+            ul
+                li I am a sub-list item 
+                li I am a sub-list item 
+            li I am a list item 
