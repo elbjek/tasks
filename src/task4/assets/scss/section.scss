@@ -1,3 +1,4 @@
+@import "../scss/variables.scss";
 
 .info-wrap {
 	display: grid;
@@ -36,7 +37,7 @@
 			}
 
 			i {
-				background-color: #aae047;
+				background-color: $green;
 				transition: 0.4s ease;
 				animation: paw 0.4s ease;
 			}
