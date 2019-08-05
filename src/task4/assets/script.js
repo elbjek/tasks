@@ -48,7 +48,6 @@ function hideModalForm(){
 //Form Validation
 
 function submitForm () {
-	console.log($('.name input').val())
 	if($('.form-item textarea').val() == '' || $('.form-item textarea').val() == '')
 	{
 		$('.error').addClass('error-visible');
